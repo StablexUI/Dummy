@@ -21,6 +21,8 @@ class BackendManager implements IBackendManager
 {
     /** widget for `sx.Sx.root` */
     private var __root : Widget;
+    /** Assets manager instance */
+    private var __assets : Assets;
 
 
     /**
@@ -47,6 +49,28 @@ class BackendManager implements IBackendManager
     public function setupFrames () : Void
     {
 
+    }
+
+
+    /**
+     * Get assets manager.
+     */
+    public function getAssets () : Assets
+    {
+        if (__assets == null) {
+            __assets = new Assets();
+        }
+
+        return __assets;
+    }
+
+
+    /**
+     * Set custom assets manager.
+     */
+    public function setAssets (assets:Assets) : Void
+    {
+        __assets = assets;
     }
 
 
